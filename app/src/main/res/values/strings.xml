@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ProyectofinalApp</string>
+    <string name="enter_email">Ingresar Email</string>
+
+    <string name="enter_password">Ingresar Contraseña</string>
+
+    <string name="login">LOGIN</string>
+    <string name="remember_password">Recordar contraseña</string>
+    <string name="btn_signIn">INGRESAR</string>
+    <string name="I_forget_password">olvide mi contraseña</string>
+    <string name="do_you_have_not_account">¿no tienes cuenta?</string>
+    <string name="create_account">Crear una cuenta nueva</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>

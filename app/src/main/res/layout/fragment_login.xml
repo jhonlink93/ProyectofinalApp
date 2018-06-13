@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/pbProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilEmailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPasswordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#FFFFFF">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="bottom"
+        android:text="@string/btn_signIn"
+        android:background="@color/colorAccent"
+        android:typeface="serif"
+        android:textSize="20dp"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRecoverPassword"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/I_forget_password"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:text="@string/do_you_have_not_account"
+            android:textColor="@color/common_google_signin_btn_text_dark"
+            android:gravity="right" />
+
+        <TextView
+            android:id="@+id/tvCreateAccount"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:text="@string/create_account"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
