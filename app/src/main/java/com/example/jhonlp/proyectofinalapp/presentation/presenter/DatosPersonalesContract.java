@@ -6,6 +6,9 @@ package com.example.jhonlp.proyectofinalapp.presentation.presenter;
 
 public interface DatosPersonalesContract {
     interface View extends BaseView {
+
+
+        void goToLoginFragment();
     }
 
     interface UserActionListener {

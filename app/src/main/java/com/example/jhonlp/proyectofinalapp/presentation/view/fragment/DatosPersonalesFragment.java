@@ -1,25 +1,24 @@
 package com.example.jhonlp.proyectofinalapp.presentation.view.fragment;
 
 import android.annotation.TargetApi;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.jhonlp.proyectofinalapp.R;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.DatosPersonalesContract;
-import com.example.jhonlp.proyectofinalapp.presentation.presenter.LoginContract;
-import com.example.jhonlp.proyectofinalapp.presentation.presenter.LoginPresenter;
+import com.example.jhonlp.proyectofinalapp.presentation.presenter.DatosPersonalesPresenter;
+import com.example.jhonlp.proyectofinalapp.presentation.view.activity.AuthActivity;
 import com.example.jhonlp.proyectofinalapp.utilities.Utilities;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ import java.util.List;
  * Created by Paola on 16/06/2018.
  */
 
-public class DatosPersonalesFragment extends Fragment implements DatosPersonalesContract.View, View.OnClickListener {
+public class DatosPersonalesFragment extends Fragment implements DatosPersonalesContract.View, View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private DatosPersonalesContract.UserActionListener mActionListener;
     private Spinner spnGenero;
@@ -39,12 +38,17 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     private TextInputLayout textPesoDeseado;
     private Button btnSiguiente;
 
+
+    public DatosPersonalesFragment() {
+        // Required empty public constructor
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_datospersonales, container, false);
 
-        //mActionListener = new DatosPersonalesPresenter(this);
+        mActionListener = new DatosPersonalesPresenter(this);
 
         spnGenero = view.findViewById(R.id.spnGenero);
         textEdad = view.findViewById(R.id.textEdad);
@@ -54,13 +58,24 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
         spnObjetivo = view.findViewById(R.id.spnObjetivo);
         textPesoDeseado = view.findViewById(R.id.textPesoDeseado);
         btnSiguiente = view.findViewById(R.id.btnSiguiente);
-
+        spnGenero.setOnItemSelectedListener(this);
+        llenarSpinerGenero();
+        llenarSpinerActividad();
+        llenarSpinerObjetivos();
         btnSiguiente.setOnClickListener(this);
 
 
         return view;
     }
 
+    @Override
+    public void goToLoginFragment() {
+
+        AuthActivity authActivity = (AuthActivity) getActivity();
+        authActivity.replaceFragment(LoginFragment.getInstance(), true);
+
+
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     public void  llenarSpinerGenero(){
@@ -75,6 +90,9 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
         spnGenero.setAdapter(generos);
     }
 
+    public static Fragment getInstance() {
+        return new DatosPersonalesFragment();
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     public void  llenarSpinerActividad(){
@@ -106,6 +124,10 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnSiguiente:
+                onNext();
+        }
 
     }
 
@@ -113,7 +135,6 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     public void showMessageError(Exception error) {
 
     }
-
 
     public void onNext() {
         Boolean result = true;
@@ -166,4 +187,13 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
         }
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

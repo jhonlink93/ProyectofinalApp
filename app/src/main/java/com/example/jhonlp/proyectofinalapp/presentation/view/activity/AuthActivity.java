@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.jhonlp.proyectofinalapp.R;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.AuthContract;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.AuthPresenter;
+import com.example.jhonlp.proyectofinalapp.presentation.view.fragment.DatosPersonalesFragment;
 import com.example.jhonlp.proyectofinalapp.presentation.view.fragment.LoginFragment;
 
 public class AuthActivity extends AppCompatActivity implements AuthContract.View {
@@ -43,7 +44,7 @@ public class AuthActivity extends AppCompatActivity implements AuthContract.View
 
     @Override
     public void goToLoginFragment() {
-        replaceFragment(LoginFragment.getInstance(), false);
+        replaceFragment(DatosPersonalesFragment.getInstance(), false);
 
     }
 
