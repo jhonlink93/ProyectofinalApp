@@ -61,7 +61,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/btnSignIn"
+        android:id="@+id/btnSignUp"
         android:layout_width="273dp"
         android:layout_height="45dp"
         android:layout_gravity="bottom"
@@ -87,7 +87,7 @@
         android:textAlignment="viewEnd"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
         tools:ignore="MissingConstraints,RtlCompat"
         tools:layout_editor_absoluteX="14dp" />
 
