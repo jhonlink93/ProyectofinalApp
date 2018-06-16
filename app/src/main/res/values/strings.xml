@@ -21,4 +21,9 @@
     <string name="peso_ideal">Peso deseado</string>
     <string name="peso_actual">Peso actual</string>
     <string name="btnSiguiente">Siguiente</string>
+    <string name="ObjetivoCal">Tu objetivo de calorías</string>
+    <string name="descripcionObetivos">Tu objetivo de calorías se calcula basándose en tu objetivo de peso y nunca será inferior a tu metabolismo basal</string>
+    <string name="metaDiaria">Tu meta diaria de calorias es :</string>
+    <string name="objetivoSemanal">Tu meta semanal de calorias es :</string>
+    <string name="objetivoMensual">Tu meta mensual de calorias es :</string>
 </resources>

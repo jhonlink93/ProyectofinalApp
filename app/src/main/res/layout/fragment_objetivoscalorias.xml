@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/ObjetivoCal"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="101dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/descripcionObetivos"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="62dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="323dp"
+        android:layout_marginTop="160dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/metaDiaria"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="196dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text=""
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/objetivoSemanal"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/objetivoMensual"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text=""
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
