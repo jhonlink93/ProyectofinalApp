@@ -51,7 +51,7 @@ public class LoginFragment extends Fragment implements LoginContract.View, View.
 
         tilEmailLogin = view.findViewById(R.id.tilEmailLogin);
         tilPasswordLogin = view.findViewById(R.id.tilPasswordLogin);
-        btnSignIn = view.findViewById(R.id.btnSignIn);
+        btnSignIn = view.findViewById(R.id.btnSignUp);
         tvRecoverPassword = view.findViewById(R.id.tvRecoverPassword);
         tvCreateAccount = view.findViewById(R.id.tvCreateAccount);
         pbProgressBar = view.findViewById(R.id.pbProgressBar);
@@ -72,8 +72,9 @@ public class LoginFragment extends Fragment implements LoginContract.View, View.
 
     @Override
     public void goToSignUpFragment() {
+
         AuthActivity authActivity = (AuthActivity) getActivity();
-        //authActivity.replaceFragment(SignUpFragment.getInstance(), true);
+        authActivity.replaceFragment(SingUpFragment.getInstance(), true);
 
 
 
@@ -143,7 +144,7 @@ public class LoginFragment extends Fragment implements LoginContract.View, View.
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnSignIn:
+            case R.id.btnSignUp:
                 onLogin();
                 break;
             case R.id.tvRecoverPassword:
