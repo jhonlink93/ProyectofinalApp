@@ -1,5 +1,6 @@
 package com.example.jhonlp.proyectofinalapp.presentation.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.example.jhonlp.proyectofinalapp.R;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.SingUpContract;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.SingUpPresenter;
+import com.example.jhonlp.proyectofinalapp.presentation.view.activity.MainActivity;
 import com.example.jhonlp.proyectofinalapp.utilities.Utilities;
 
 /**
@@ -89,6 +91,16 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
         if (result) {
             mActionListener.onSingUp(username, email, password, "1.63", "mas", "hola", "maso", "ser el mejor", "el tuyo");
         }
+    }
+
+    @Override
+    public void goToMainActivity() {
+/*
+      cargar lo necesario antes de llamar al intnet*/
+
+        Intent intentMainActivity = new Intent(getContext(), MainActivity.class);
+        startActivity(intentMainActivity);
+        getActivity().finish();
     }
 
 

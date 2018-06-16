@@ -8,6 +8,7 @@ public interface SingUpContract {
 
     interface View extends BaseView {
 
+        void goToMainActivity();
     }
 
     interface UserActionListener {

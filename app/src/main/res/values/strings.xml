@@ -14,4 +14,11 @@
     <string name="password">Contraseña</string>
     <string name="username">Nombre Usuario</string>
     <string name="btn_signUp">Registrarse</string>
+    <string name="informacion">Por favor introduce tus valores coporales para personalizar tu plan y calcular tus objetivos diario de calorias</string>
+    <string name="titulo">Tus valores corporales</string>
+    <string name="edad">Edad</string>
+    <string name="estatura">Estatura</string>
+    <string name="peso_ideal">Peso deseado</string>
+    <string name="peso_actual">Peso actual</string>
+    <string name="btnSiguiente">Siguiente</string>
 </resources>
