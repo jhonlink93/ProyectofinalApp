@@ -9,9 +9,6 @@ import com.example.jhonlp.proyectofinalapp.repository.IAuthRepository;
 import com.example.jhonlp.proyectofinalapp.repository.impl.AuthFirebaseRepository;
 import com.example.jhonlp.proyectofinalapp.utilities.Constant;
 
-/**
- * Created by diegocortes on 12/17/17.
- */
 
 public class UserUseCase implements IUserUseCase {
 
