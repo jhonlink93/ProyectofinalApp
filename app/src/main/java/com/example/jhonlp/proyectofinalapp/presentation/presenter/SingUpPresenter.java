@@ -30,8 +30,8 @@ public class SingUpPresenter implements  SingUpContract.UserActionListener {
 
 
     @Override
-    public void onSingUp(String username, String email, String password) {
-        userUseCase.signUp(username,email, password, new Callback<User>() {
+    public void onSingUp(String username, String email, String password, String peso, String genero, String estatura, String nivelActividad, String objetivo, String pesoDeseado) {
+        userUseCase.signUp(username, email, password, peso, genero, estatura, nivelActividad, objetivo, pesoDeseado, new Callback<User>() {
             @Override
             public void success(User result) {
                 //view.goToMainActivity();

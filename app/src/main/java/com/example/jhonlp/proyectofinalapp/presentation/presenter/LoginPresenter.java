@@ -1,6 +1,7 @@
 package com.example.jhonlp.proyectofinalapp.presentation.presenter;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.jhonlp.proyectofinalapp.domain.model.User;
 import com.example.jhonlp.proyectofinalapp.domain.useCase.ILocalDataUseCase;
@@ -39,6 +40,7 @@ public class LoginPresenter implements LoginContract.UserActionListener {
             public void error(Exception error) {
                 view.hidePRogress();
                 view.showMessageError(error);
+
             }
         });
     }

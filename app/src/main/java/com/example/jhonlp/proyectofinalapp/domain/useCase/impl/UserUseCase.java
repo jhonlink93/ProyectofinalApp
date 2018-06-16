@@ -49,9 +49,9 @@ public class UserUseCase implements IUserUseCase {
     }
 
     @Override
-    public void signUp(String fullName, String email, String password, final Callback<User> callback) {
+    public void signUp(String fullName, String email, String password, String peso, String genero, String estatura, String nivelActividad, String objetivo, String pesoDeseado, final Callback<User> callback) {
 
-        User user = new User(fullName, email, password);
+        User user = new User(fullName, email, password, peso, genero, estatura, nivelActividad, objetivo, pesoDeseado);
         authRepository.signUp(user, new Callback<User>() {
             @Override
             public void success(User user) {

@@ -11,7 +11,7 @@ public interface SingUpContract {
     }
 
     interface UserActionListener {
-        void onSingUp( final String username, String email, String password);
+        void onSingUp(final String username, String email, String password, String peso, String genero, String estatura, String nivelActividad, String objetivo, String pesoDeseado);
 
     }
 }

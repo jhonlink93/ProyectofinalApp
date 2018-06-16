@@ -87,7 +87,7 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
         }
 
         if (result) {
-            mActionListener.onSingUp(username,email, password);
+            mActionListener.onSingUp(username, email, password, "1.63", "mas", "hola", "maso", "ser el mejor", "el tuyo");
         }
     }
 
