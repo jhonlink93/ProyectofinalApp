@@ -74,12 +74,17 @@ public class LoginFragment extends Fragment implements LoginContract.View, View.
     public void goToSignUpFragment() {
         AuthActivity authActivity = (AuthActivity) getActivity();
         //authActivity.replaceFragment(SignUpFragment.getInstance(), true);
+
+
+
     }
 
     @Override
     public void goToRecoverPassword() {
         AuthActivity authActivity = (AuthActivity) getActivity();
         //authActivity.replaceFragment(RecoverPasswordFragment.getInstance(), true);
+
+
     }
 
     @Override
