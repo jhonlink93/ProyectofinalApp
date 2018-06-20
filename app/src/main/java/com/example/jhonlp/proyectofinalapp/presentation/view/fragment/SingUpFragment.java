@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.jhonlp.proyectofinalapp.R;
@@ -28,6 +29,7 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
     private TextInputLayout EmailSingUp;
     private TextInputLayout PasswordSingUp;
     private Button btnSignUp;
+    private ProgressBar pbProgressBar;
 
     public SingUpFragment() {
 
@@ -48,6 +50,7 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
         EmailSingUp = view.findViewById(R.id.EmailSingUp);
         PasswordSingUp = view.findViewById(R.id.PasswordSingUp);
         btnSignUp= view.findViewById(R.id.btnSignUp);
+        pbProgressBar = view.findViewById(R.id.pbProgressBar);
 
         btnSignUp.setOnClickListener(this);
 
@@ -112,9 +115,16 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
                 onSingUp();
 
         }
+    }
 
+    @Override
+    public void showProgress() {
+        pbProgressBar.setVisibility(View.VISIBLE);
+    }
 
-
+    @Override
+    public void hidePRogress() {
+        pbProgressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override

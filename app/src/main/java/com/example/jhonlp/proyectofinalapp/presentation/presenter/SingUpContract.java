@@ -9,6 +9,10 @@ public interface SingUpContract {
     interface View extends BaseView {
 
         void goToMainActivity();
+
+        void showProgress();
+
+        void hidePRogress();
     }
 
     interface UserActionListener {
