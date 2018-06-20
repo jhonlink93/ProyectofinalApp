@@ -1,19 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_auth"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:design="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_auth"
     tools:context=".presentation.view.activity.MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Reporte Diario"
+            android:textSize="18sp"
+            design:layout_constraintBottom_toBottomOf="parent"
+            design:layout_constraintEnd_toEndOf="parent"
+            design:layout_constraintHorizontal_bias="0.426"
+            design:layout_constraintStart_toStartOf="parent"
+            design:layout_constraintTop_toTopOf="parent"
+            design:layout_constraintVertical_bias="0.048"
+            tools:ignore="MissingConstraints" />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/menu_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            design:layout_constraintBottom_toBottomOf="parent"
+            design:layout_constraintEnd_toEndOf="parent"
+            design:layout_constraintHorizontal_bias="0.968"
+            design:layout_constraintStart_toStartOf="parent"
+            design:layout_constraintTop_toTopOf="parent"
+            design:layout_constraintVertical_bias="0.612"
+            fab:fab_addButtonColorNormal="?attr/colorPrimary"
+            fab:fab_addButtonSize="normal"
+            fab:fab_labelStyle="@style/Etiquetas"
+            fab:fab_labelsPosition="left">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/accion_desayuno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="?attr/colorPrimary"
+                fab:fab_icon="@drawable/food2"
+                fab:fab_size="mini"
+                fab:fab_title="Desayuno" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/accion_almuerzo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="?attr/colorPrimary"
+                fab:fab_icon="@drawable/food2"
+                fab:fab_size="mini"
+                fab:fab_title="Almuerzo" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/accion_cena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="?attr/colorPrimary"
+                fab:fab_icon="@drawable/food2"
+                fab:fab_size="mini"
+                fab:fab_title="Cena" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/accion_ejercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="?attr/colorPrimary"
+                fab:fab_icon="@drawable/run2"
+                fab:fab_size="mini"
+                fab:fab_title="Ejercicio" />
+
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        design:itemBackground="@color/colorPrimary"
         android:layout_gravity="bottom"
+        design:itemBackground="@color/colorPrimary"
         design:itemIconTint="@color/colorAccent"
         design:itemTextColor="@color/colorPrimaryDark"
         design:menu="@menu/bottom_navigation_menu"></android.support.design.widget.BottomNavigationView>
