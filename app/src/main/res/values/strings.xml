@@ -33,4 +33,5 @@
     <string name="olvidarContraseña">Ingrese su correo, para reiniciar su contraseña</string>
     <string name="recuperar">Recuperar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="buscar">Buscar en la base de datos</string>
 </resources>
