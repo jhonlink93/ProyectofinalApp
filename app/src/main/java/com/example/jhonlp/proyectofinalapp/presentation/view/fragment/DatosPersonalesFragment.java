@@ -64,6 +64,8 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
         textPesoDeseado = view.findViewById(R.id.textPesoDeseado);
         btnSiguiente = view.findViewById(R.id.btnSiguiente);
         spnGenero.setOnItemSelectedListener(this);
+        spnActividad.setOnItemSelectedListener(this);
+        spnObjetivo.setOnItemSelectedListener(this);
         llenarSpinerGenero();
         llenarSpinerActividad();
         llenarSpinerObjetivos();

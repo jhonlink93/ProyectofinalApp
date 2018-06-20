@@ -61,7 +61,7 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
             getArguments().getString("actividad");
         }
         tvCaloriasDiaria = view.findViewById(R.id.tvCaloriasDiaria);
-        tvCaloriasDiaria.setText(edad);
+        //tvCaloriasDiaria.setText(edad);
 
         tvCaloriasSemanal = view.findViewById(R.id.tvCaloriasSemanal);
         tvCaloriasMensual = view.findViewById(R.id.tvCaloriasMensual);

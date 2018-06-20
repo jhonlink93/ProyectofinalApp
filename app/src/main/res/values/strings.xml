@@ -3,7 +3,10 @@
     <string name="enter_email">Ingresar Email</string>
 
     <string name="enter_password">Ingresar Contraseña</string>
-
+    <string name="bottom_navigation_menu_device_text">Device</string>
+    <string name="bottom_navigation_menu_cloud_text">Cloud</string>
+    <string name="bottom_navigation_menu_share_text">Share</string>
+    <string name="bottom_navigation_menu_settings_text">Settings</string>
     <string name="login">LOGIN</string>
     <string name="remember_password">Recordar contraseña</string>
     <string name="btn_signIn">INGRESAR</string>
