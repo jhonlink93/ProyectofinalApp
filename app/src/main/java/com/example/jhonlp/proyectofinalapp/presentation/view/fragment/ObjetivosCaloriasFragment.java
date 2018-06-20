@@ -27,6 +27,7 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
     private Button btnSiguiente;
 
     private int edad;
+    String genero;
 
 
 
@@ -48,9 +49,19 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
 
         View view = inflater.inflate(R.layout.fragment_objetivoscalorias, container, false);
         mActionListener =  new ObjetivosCaloriasPresenter(this);
+        if (!getArguments().isEmpty()) {
 
+            // aqui ya estan los datos... solo hay q guardarlos en variables como al primero
+            genero = getArguments().getString("genero");
+            edad = getArguments().getInt("edad");
+            getArguments().getFloat("estatura");
+            getArguments().getFloat("pesoActual");
+            getArguments().getFloat("pesoDeseado");
+            getArguments().getString("objetivoDeseado");
+            getArguments().getString("actividad");
+        }
         tvCaloriasDiaria = view.findViewById(R.id.tvCaloriasDiaria);
-        //tvCaloriasDiaria.setText(edad);
+        tvCaloriasDiaria.setText(edad);
 
         tvCaloriasSemanal = view.findViewById(R.id.tvCaloriasSemanal);
         tvCaloriasMensual = view.findViewById(R.id.tvCaloriasMensual);

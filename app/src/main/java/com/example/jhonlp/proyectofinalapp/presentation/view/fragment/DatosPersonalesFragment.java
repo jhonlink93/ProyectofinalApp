@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.jhonlp.proyectofinalapp.R;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.DatosPersonalesContract;
@@ -38,6 +37,11 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     private Spinner spnObjetivo;
     private TextInputLayout textPesoDeseado;
     private Button btnSiguiente;
+    String genero, actividad, objetivoDeseado;
+    String edad;
+    String estatura;
+    String pesoActual;
+    String PesoDeseado;
 
 
     public DatosPersonalesFragment() {
@@ -72,8 +76,18 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     @Override
     public void goToObjetivosCaloriasFragment() {
 
+        Fragment trans = ObjetivosCaloriasFragment.getInstance();
+        Bundle args = new Bundle();
+        args.putString("genero", genero);
+        args.putInt("edad", Integer.parseInt(edad));
+        args.putFloat("estatura", Float.parseFloat(estatura));
+        args.putFloat("pesoActual", Float.parseFloat(pesoActual));
+        args.putFloat("pesoDeseado", Float.parseFloat(PesoDeseado));
+        args.putString("objetivoDeseado", objetivoDeseado);
+        args.putString("actividad", actividad);
 
-        int edad = Integer.parseInt( textEdad.getEditText().getText().toString());
+
+        trans.setArguments(args);
 
 
 
@@ -81,7 +95,8 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
         //authActivity.replaceFragment(ObjetivosCaloriasFragment.getInstance(), true);
 
 
-        authActivity.replaceFragment(ObjetivosCaloriasFragment.getInstance(edad), true);
+        authActivity.replaceFragment(trans, true);
+
 
 
 
@@ -148,10 +163,12 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
 
     public void onNext() {
         Boolean result = true;
-        String edad = textEdad.getEditText().getText().toString();
-        String estatura = textEstatura.getEditText().getText().toString();
-        String pesoActual = textPesoActual.getEditText().getText().toString();;
-        String PesoDeseado = textPesoDeseado.getEditText().getText().toString();;
+        edad = textEdad.getEditText().getText().toString();
+        estatura = textEstatura.getEditText().getText().toString();
+        pesoActual = textPesoActual.getEditText().getText().toString();
+        ;
+        PesoDeseado = textPesoDeseado.getEditText().getText().toString();
+        ;
 
 
 
@@ -184,7 +201,7 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
         }
 
         if (Utilities.isEmpty(PesoDeseado)) {
-            textPesoDeseado.setError("el  peso deseado es requerido");
+            textPesoDeseado.setError("el  peso objetivoDeseado es requerido");
             textPesoDeseado.setErrorEnabled(true);
             result = false;
         } else {
@@ -199,6 +216,20 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        switch (parent.getId()) {
+            case R.id.spnActividad:
+                actividad = (String) parent.getItemAtPosition(position);
+
+                break;
+            case R.id.spnGenero:
+                genero = (String) parent.getItemAtPosition(position);
+
+                break;
+            case R.id.spnObjetivo:
+                objetivoDeseado = (String) parent.getItemAtPosition(position);
+
+        }
 
     }
 
