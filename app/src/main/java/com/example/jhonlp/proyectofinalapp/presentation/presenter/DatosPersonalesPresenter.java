@@ -15,7 +15,7 @@ public class DatosPersonalesPresenter implements DatosPersonalesContract.UserAct
     @Override
     public void onNext() {
 
-        view.goToLoginFragment();
+        view.goToObjetivosCaloriasFragment();
 
     }
 }

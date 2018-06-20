@@ -1,17 +1,20 @@
 package com.example.jhonlp.proyectofinalapp.presentation.presenter;
 
 /**
- * Created by Paola on 16/06/2018.
+ * Created by Paola on 18/06/2018.
  */
 
-public interface DatosPersonalesContract {
+public interface ObjetivosCaloriasContract {
+
     interface View extends BaseView {
 
 
-        void goToObjetivosCaloriasFragment();
+        void goToSingUpFragment();
+        void goToSingDatosPersonalesFragment();
     }
 
     interface UserActionListener {
         void onNext();
+        void onBack();
     }
 }

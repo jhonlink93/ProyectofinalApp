@@ -26,4 +26,5 @@
     <string name="metaDiaria">Tu meta diaria de calorias es :</string>
     <string name="objetivoSemanal">Tu meta semanal de calorias es :</string>
     <string name="objetivoMensual">Tu meta mensual de calorias es :</string>
+    <string name="anterior">Anterior</string>
 </resources>

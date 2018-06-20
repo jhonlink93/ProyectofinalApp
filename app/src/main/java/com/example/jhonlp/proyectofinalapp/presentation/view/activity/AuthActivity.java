@@ -44,7 +44,7 @@ public class AuthActivity extends AppCompatActivity implements AuthContract.View
 
     @Override
     public void goToLoginFragment() {
-        replaceFragment(DatosPersonalesFragment.getInstance(), false);
+        replaceFragment(LoginFragment.getInstance(), false);
 
     }
 

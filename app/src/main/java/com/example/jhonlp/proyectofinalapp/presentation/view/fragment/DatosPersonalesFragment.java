@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.jhonlp.proyectofinalapp.R;
 import com.example.jhonlp.proyectofinalapp.presentation.presenter.DatosPersonalesContract;
@@ -69,10 +70,19 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     }
 
     @Override
-    public void goToLoginFragment() {
+    public void goToObjetivosCaloriasFragment() {
+
+
+        int edad = Integer.parseInt( textEdad.getEditText().getText().toString());
+
+
 
         AuthActivity authActivity = (AuthActivity) getActivity();
-        authActivity.replaceFragment(LoginFragment.getInstance(), true);
+        //authActivity.replaceFragment(ObjetivosCaloriasFragment.getInstance(), true);
+
+
+        authActivity.replaceFragment(ObjetivosCaloriasFragment.getInstance(edad), true);
+
 
 
     }
@@ -97,10 +107,10 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     @TargetApi(Build.VERSION_CODES.M)
     public void  llenarSpinerActividad(){
         List<String> tipos = new ArrayList<>(0);
-        tipos.add("Ninguna actividad fisica");
-        tipos.add("Caminata diaria");
-        tipos.add("Trote diario");
-        tipos.add("Deporte especializado");
+        tipos.add("Sedentaria");
+        tipos.add("Leve");
+        tipos.add("Moderada");
+        tipos.add("Fuerte");
 
         ArrayAdapter<String> actividades= new ArrayAdapter<String>(
                 getContext(), R.layout.support_simple_spinner_dropdown_item, tipos);
