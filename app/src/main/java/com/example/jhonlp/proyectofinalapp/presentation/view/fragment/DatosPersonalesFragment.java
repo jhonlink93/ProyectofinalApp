@@ -138,9 +138,9 @@ public class DatosPersonalesFragment extends Fragment implements DatosPersonales
     @TargetApi(Build.VERSION_CODES.M)
     public void  llenarSpinerObjetivos(){
         List<String> tipos = new ArrayList<>(0);
-        tipos.add("Aumentar masa muscular");
-        tipos.add("Perder masa muscular");
-        tipos.add("Mantener masa muscular");
+        tipos.add("Aumentar peso");
+        tipos.add("Disminuir peso");
+        tipos.add("Mantener peso");
 
         ArrayAdapter<String> Objetivos= new ArrayAdapter<String>(
                 getContext(), R.layout.support_simple_spinner_dropdown_item, tipos);

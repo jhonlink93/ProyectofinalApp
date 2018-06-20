@@ -27,7 +27,8 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
     private Button btnSiguiente;
 
     private int edad;
-    String genero;
+    private String genero,objetivoDeseado,actividad;
+    private double estatura,pesoActual,pesoDeseado;
 
 
 
@@ -36,13 +37,6 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
     }
 
 
-    @SuppressLint("ValidFragment")
-    //public ObjetivosCaloriasFragment(Integer edad, Integer estatura, Integer pesoActual, String actividad, String objetivo) {
-
-    public ObjetivosCaloriasFragment(int edad){
-        this.edad=edad;
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -51,35 +45,76 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
         mActionListener =  new ObjetivosCaloriasPresenter(this);
         if (!getArguments().isEmpty()) {
 
-            // aqui ya estan los datos... solo hay q guardarlos en variables como al primero
             genero = getArguments().getString("genero");
             edad = getArguments().getInt("edad");
-            getArguments().getFloat("estatura");
-            getArguments().getFloat("pesoActual");
-            getArguments().getFloat("pesoDeseado");
-            getArguments().getString("objetivoDeseado");
-            getArguments().getString("actividad");
+            estatura=getArguments().getFloat("estatura");
+            pesoActual=getArguments().getFloat("pesoActual");
+            pesoDeseado=getArguments().getFloat("pesoDeseado");
+            objetivoDeseado=getArguments().getString("objetivoDeseado");
+            actividad=getArguments().getString("actividad");
         }
         tvCaloriasDiaria = view.findViewById(R.id.tvCaloriasDiaria);
-        //tvCaloriasDiaria.setText(edad);
-
         tvCaloriasSemanal = view.findViewById(R.id.tvCaloriasSemanal);
         tvCaloriasMensual = view.findViewById(R.id.tvCaloriasMensual);
         btnSiguiente = view.findViewById(R.id.btnSiguiente);
 
-
         btnSiguiente.setOnClickListener(this);
+        calcularObjetivos();
 
 
         return view;
     }
 
-    public static ObjetivosCaloriasFragment getInstance( int edad) {
-        return new ObjetivosCaloriasFragment(edad);
-    }
 
     public static ObjetivosCaloriasFragment getInstance( ) {
         return new ObjetivosCaloriasFragment();
+    }
+
+    @Override
+    public void calcularObjetivos(){
+        double resultadoParcial,tmb , resultadoFinal ;
+        if (genero=="Femenino"){
+            tmb= 655 + (9.6* pesoActual) + (1.8 * estatura) - (4.7 * edad);
+            }
+        else {
+            tmb= 66.5  + (13.8 * pesoActual) + (5  * estatura) - (6.8  * edad);
+        }
+
+        if (actividad=="Sedentaria"){
+            resultadoParcial= tmb*1.2;
+        }
+        else if (actividad=="Leve"){
+            resultadoParcial= tmb*1.375;
+        }
+        else if (actividad=="Moderada"){
+            resultadoParcial= tmb*1.55;
+        }
+        else {
+            resultadoParcial= tmb*1.725;
+        }
+
+        if (objetivoDeseado=="Aumentar peso"){
+
+            resultadoFinal=resultadoParcial + resultadoParcial*0.2;
+        }
+        else if (objetivoDeseado=="Disminuir peso"){
+
+            resultadoFinal=resultadoParcial*0.8;
+        }
+        else{
+            resultadoFinal=resultadoParcial;
+        }
+        
+        
+
+        tvCaloriasDiaria.setText(resultadoFinal+" Kcal");
+        tvCaloriasSemanal.setText(resultadoFinal*7 +" Kcal");
+        tvCaloriasMensual.setText(resultadoFinal*4 +" Kcal");
+
+
+
+
+
     }
 
     @Override

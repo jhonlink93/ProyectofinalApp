@@ -9,6 +9,8 @@ public interface ObjetivosCaloriasContract {
     interface View extends BaseView {
 
 
+        void calcularObjetivos();
+
         void goToSingUpFragment();
         void goToSingDatosPersonalesFragment();
     }
