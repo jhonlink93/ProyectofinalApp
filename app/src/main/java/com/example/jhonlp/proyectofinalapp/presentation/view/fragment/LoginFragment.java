@@ -84,7 +84,7 @@ public class LoginFragment extends Fragment implements LoginContract.View, View.
     @Override
     public void goToRecoverPassword() {
         AuthActivity authActivity = (AuthActivity) getActivity();
-        //authActivity.replaceFragment(RecoverPasswordFragment.getInstance(), true);
+        authActivity.replaceFragment(RecoverPasswordFragment.getInstance(), true);
 
 
     }

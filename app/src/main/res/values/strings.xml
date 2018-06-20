@@ -27,4 +27,7 @@
     <string name="objetivoSemanal">Tu meta semanal de calorias es :</string>
     <string name="objetivoMensual">Tu meta mensual de calorias es :</string>
     <string name="anterior">Anterior</string>
+    <string name="olvidarContraseña">Ingrese su correo, para reiniciar su contraseña</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
