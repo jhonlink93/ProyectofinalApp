@@ -25,7 +25,6 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
     private ObjetivosCaloriasContract.UserActionListener mActionListener;
     private TextView tvCaloriasDiaria, tvCaloriasSemanal,tvCaloriasMensual;
     private Button btnSiguiente;
-    private Button btnAnterior;
 
     private int edad;
 
@@ -56,10 +55,9 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
         tvCaloriasSemanal = view.findViewById(R.id.tvCaloriasSemanal);
         tvCaloriasMensual = view.findViewById(R.id.tvCaloriasMensual);
         btnSiguiente = view.findViewById(R.id.btnSiguiente);
-        btnAnterior = view.findViewById(R.id.btnAnterior);
+
 
         btnSiguiente.setOnClickListener(this);
-        btnAnterior.setOnClickListener(this);
 
 
         return view;
@@ -94,9 +92,7 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
             case R.id.btnSiguiente:
                 goToSingUpFragment();
                 break;
-            case R.id.btnAnterior:
-                goToSingDatosPersonalesFragment();
-                break;
+
         }
 
     }

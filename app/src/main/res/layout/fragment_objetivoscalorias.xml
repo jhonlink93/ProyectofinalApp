@@ -71,14 +71,7 @@
         android:layout_height="77dp"
         android:orientation="horizontal">
 
-        <Button
 
-            android:id="@+id/btnAnterior"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:text="@string/anterior" />
 
         <Button
             android:id="@+id/btnSiguiente"

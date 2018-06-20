@@ -10,10 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.view.activity.MainActivity">
+        <activity
+            android:name=".presentation.view.activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
 
         </activity>
-        <activity android:name=".presentation.view.activity.AuthActivity">
+        <activity
+            android:name=".presentation.view.activity.AuthActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
