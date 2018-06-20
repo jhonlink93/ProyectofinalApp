@@ -30,6 +30,9 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
     private TextInputLayout PasswordSingUp;
     private Button btnSignUp;
     private ProgressBar pbProgressBar;
+    private int edad;
+    private String genero, objetivoDeseado, actividad;
+    private Float estatura, pesoActual, pesoDeseado;
 
     public SingUpFragment() {
 
@@ -45,6 +48,16 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
         View view = inflater.inflate(R.layout.fragment_singup, container, false);
 
         mActionListener = new SingUpPresenter(this);
+        if (!getArguments().isEmpty()) {
+
+            genero = getArguments().getString("genero");
+            edad = getArguments().getInt("edad");
+            estatura = getArguments().getFloat("estatura");
+            pesoActual = getArguments().getFloat("pesoActual");
+            pesoDeseado = getArguments().getFloat("pesoDeseado");
+            objetivoDeseado = getArguments().getString("objetivoDeseado");
+            actividad = getArguments().getString("actividad");
+        }
 
         UsernameSingUp = view.findViewById(R.id.UsernameSingUp);
         EmailSingUp = view.findViewById(R.id.EmailSingUp);
@@ -92,7 +105,7 @@ public class SingUpFragment extends Fragment implements SingUpContract.View, Vie
         }
 
         if (result) {
-            mActionListener.onSingUp(username, email, password, "1.63", "mas", "hola", "maso", "ser el mejor", "el tuyo");
+            mActionListener.onSingUp(username, email, password, "" + pesoActual, genero, "" + estatura, actividad, "" + objetivoDeseado, "" + pesoDeseado);
         }
     }
 

@@ -119,8 +119,20 @@ public class ObjetivosCaloriasFragment  extends Fragment implements ObjetivosCal
 
     @Override
     public void goToSingUpFragment() {
+        Fragment trans = SingUpFragment.getInstance();
+        Bundle args = new Bundle();
+        args.putString("genero", genero);
+        args.putInt("edad", edad);
+        args.putFloat("estatura", (float) estatura);
+        args.putFloat("pesoActual", (float) pesoActual);
+        args.putFloat("pesoDeseado", (float) pesoDeseado);
+        args.putString("objetivoDeseado", objetivoDeseado);
+        args.putString("actividad", actividad);
+
+
+        trans.setArguments(args);
         AuthActivity authActivity = (AuthActivity) getActivity();
-        authActivity.replaceFragment(SingUpFragment.getInstance(), true);
+        authActivity.replaceFragment(trans, true);
 
     }
 
