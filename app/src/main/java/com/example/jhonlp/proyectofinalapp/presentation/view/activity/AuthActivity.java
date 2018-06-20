@@ -1,5 +1,6 @@
 package com.example.jhonlp.proyectofinalapp.presentation.view.activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -50,6 +51,10 @@ public class AuthActivity extends AppCompatActivity implements AuthContract.View
 
     @Override
     public void goToMainActivity() {
+
+        Intent intentMainActivity = new Intent(this, MainActivity.class);
+        startActivity(intentMainActivity);
+        finish();
 
     }
 }
